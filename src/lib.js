@@ -6,13 +6,12 @@ const { NETWORK } = require(`${basePath}/constants/network.js`)
 
 const {
   format,
-  description,
   background,
   rarityDelimiter,
   dnaDelimiter,
   debugLogs,
-  namePrefix,
   network,
+  defaultMetadata,
   solanaMetadata,
 } = require(`${basePath}/src/config.js`)
 
@@ -189,25 +188,23 @@ const saveMetaDataSingleFile = (edition) => {
 const addMetadata = (_dna, _edition, ipfsUrl) => {
   let dateTime = Date.now()
   let tempMetadata = {
-    name: `${namePrefix} #${_edition}`,
-    description: description,
+    name: `${defaultMetadata.namePrefix} #${_edition}`,
+    description: defaultMetadata.description,
     image: ipfsUrl,
     dna: sha1(_dna),
     edition: _edition,
     date: dateTime,
     attributes: attributesList,
+    external_url: defaultMetadata.externalUrl,
     compiler: "DeezNutz NFT Engine",
   }
   if (network == NETWORK.sol) {
     tempMetadata = {
-      //Added metadata for solana
       name: tempMetadata.name,
       symbol: solanaMetadata.symbol,
       description: tempMetadata.description,
-      //Added metadata for solana
       seller_fee_basis_points: solanaMetadata.seller_fee_basis_points,
       image: `image.png`,
-      //Added metadata for solana
       external_url: solanaMetadata.external_url,
       edition: _edition,
       attributes: tempMetadata.attributes,

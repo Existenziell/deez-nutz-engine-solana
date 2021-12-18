@@ -25,8 +25,8 @@ const MODE = {
   saturation: "saturation",
   color: "color",
   luminosity: "luminosity",
-};
+}
 
 module.exports = {
   MODE,
-};
+}

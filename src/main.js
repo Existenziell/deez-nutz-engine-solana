@@ -196,7 +196,7 @@ const startCreating = async () => {
           }
 
           console.log('----------------------------------------')
-          console.log("Start creation of NFT", editionCount);
+          console.log("Start creation of NFT", editionCount)
           console.log(`Drawing layers`)
 
           renderObjectArray.forEach((renderObject, index) => {
