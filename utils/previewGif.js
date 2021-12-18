@@ -3,7 +3,7 @@ const fs = require("fs");
 const { createCanvas, loadImage } = require("canvas");
 const buildDir = `${basePath}/build`;
 const imageDir = `${buildDir}/images`;
-const { format, preview_gif } = require(`${basePath}/src/config.js`);
+const { format, previewGif } = require(`${basePath}/src/config.js`);
 const canvas = createCanvas(format.width, format.height);
 const ctx = canvas.getContext("2d");
 
@@ -25,8 +25,7 @@ const rawdata = fs.readdirSync(imageDir).forEach((file) => {
 
 const saveProjectPreviewGIF = async (_data) => {
   // Extract from preview config
-  const { numberOfImages, order, repeat, quality, delay, imageName } =
-    preview_gif;
+  const { numberOfImages, order, repeat, quality, delay, imageName } = previewGif;
   // Extract from format config
   const { width, height } = format;
   // Prepare canvas

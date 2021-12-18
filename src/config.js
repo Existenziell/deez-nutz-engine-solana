@@ -1,5 +1,5 @@
 const basePath = process.cwd()
-const { MODE } = require(`${basePath}/constants/blend_mode.js`)
+const { MODE } = require(`${basePath}/constants/blendMode.js`)
 const { NETWORK } = require(`${basePath}/constants/network.js`)
 
 const network = NETWORK.eth
@@ -39,12 +39,21 @@ const layerConfigurations = [
   },
 ]
 
+// {
+//   name: "Background",
+//   options: {
+//     blend: MODE.multiply,
+//     opacity: 0.2,
+//     displayName: "Renamed Background",
+//   }
+// },
+
 const shuffleLayerConfigurations = false
 const debugLogs = false
 
 const format = {
-  width: 100,
-  height: 100,
+  width: 1000,
+  height: 1000,
   smoothing: false,
 }
 
@@ -91,7 +100,7 @@ const preview = {
   imageName: "preview.png",
 }
 
-const preview_gif = {
+const previewGif = {
   numberOfImages: 5,
   order: "ASC", // ASC, DESC, MIXED
   repeat: 0,
@@ -118,5 +127,5 @@ module.exports = {
   network,
   solanaMetadata,
   gif,
-  preview_gif,
+  previewGif,
 }
