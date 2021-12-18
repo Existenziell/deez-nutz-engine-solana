@@ -81,6 +81,7 @@ const background = {
 }
 
 const rarityDelimiter = "#"
+const dnaDelimiter = "-"
 const uniqueDnaTorrance = 10000
 
 const preview = {
@@ -98,8 +99,6 @@ const preview_gif = {
   delay: 500,
   imageName: "preview.gif",
 }
-
-const dnaDelimiter = "-"
 
 module.exports = {
   format,
