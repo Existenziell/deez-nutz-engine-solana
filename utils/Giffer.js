@@ -1,7 +1,7 @@
 const GifEncoder = require("gif-encoder-2");
 const { writeFile } = require("fs");
 
-class Giffer {
+class giffer {
   constructor(_canvas, _ctx, _fileName, _repeat, _quality, _delay) {
     this.canvas = _canvas;
     this.ctx = _ctx;
@@ -35,4 +35,4 @@ class Giffer {
   };
 }
 
-module.exports = Giffer;
+module.exports = giffer;

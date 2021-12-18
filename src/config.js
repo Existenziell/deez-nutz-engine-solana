@@ -1,14 +1,13 @@
-const basePath = process.cwd();
-const { MODE } = require(`${basePath}/constants/blend_mode.js`);
-const { NETWORK } = require(`${basePath}/constants/network.js`);
+const basePath = process.cwd()
+const { MODE } = require(`${basePath}/constants/blend_mode.js`)
+const { NETWORK } = require(`${basePath}/constants/network.js`)
 
-const network = NETWORK.eth;
+const network = NETWORK.eth
 
 // General metadata for Ethereum
-const namePrefix = "DeezNutz NFTs";
-const description = "Algorithmically generated NFT ball sacks";
-const baseUri = "https://ipfs.infura.io/ipfs/";
-
+const namePrefix = "DeezNutz NFTs"
+const description = "Algorithmically generated NFT ball sacks"
+const baseUri = "https://ipfs.infura.io/ipfs/"
 const solanaMetadata = {
   symbol: "DNN",
   seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
@@ -19,12 +18,12 @@ const solanaMetadata = {
       share: 100,
     },
   ],
-};
+}
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 100,
+    growEditionSizeTo: 4,
     layersOrder: [
       { name: "Background" },
       { name: "Balls" },
@@ -36,24 +35,23 @@ const layerConfigurations = [
       { name: "Extras" },
     ],
   },
-];
+]
 
-const shuffleLayerConfigurations = false;
-
-const debugLogs = false;
+const shuffleLayerConfigurations = false
+const debugLogs = false
 
 const format = {
-  width: 1000,
-  height: 1000,
+  width: 100,
+  height: 100,
   smoothing: false,
-};
+}
 
 const gif = {
   export: false,
   repeat: 0,
   quality: 100,
   delay: 500,
-};
+}
 
 const text = {
   only: false,
@@ -66,32 +64,30 @@ const text = {
   weight: "regular",
   family: "Courier",
   spacer: " => ",
-};
+}
 
 const pixelFormat = {
   // ratio: 2 / 128,
   ratio: 10 / 128,
-};
+}
 
 const background = {
   generate: false,
   brightness: "80%",
   static: false,
   default: "#000000",
-};
+}
 
-const extraMetadata = {};
-
-const rarityDelimiter = "#";
-
-const uniqueDnaTorrance = 10000;
+const extraMetadata = {}
+const rarityDelimiter = "#"
+const uniqueDnaTorrance = 10000
 
 const preview = {
   thumbPerRow: 5,
   thumbWidth: 50,
   imageRatio: format.height / format.width,
   imageName: "preview.png",
-};
+}
 
 const preview_gif = {
   numberOfImages: 5,
@@ -100,7 +96,9 @@ const preview_gif = {
   quality: 100,
   delay: 500,
   imageName: "preview.gif",
-};
+}
+
+const dnaDelimiter = "-"
 
 module.exports = {
   format,
@@ -110,6 +108,7 @@ module.exports = {
   uniqueDnaTorrance,
   layerConfigurations,
   rarityDelimiter,
+  dnaDelimiter,
   preview,
   shuffleLayerConfigurations,
   debugLogs,
@@ -121,4 +120,4 @@ module.exports = {
   solanaMetadata,
   gif,
   preview_gif,
-};
+}

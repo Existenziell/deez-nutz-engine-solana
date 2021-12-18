@@ -7,7 +7,7 @@ const { format, preview_gif } = require(`${basePath}/src/config.js`);
 const canvas = createCanvas(format.width, format.height);
 const ctx = canvas.getContext("2d");
 
-const Giffer = require(`${basePath}/modules/Giffer.js`);
+const Giffer = require(`${basePath}/utils/Giffer.js`);
 let giffer = null;
 
 const loadImg = async (_img) => {
