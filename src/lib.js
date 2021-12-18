@@ -11,7 +11,6 @@ const {
   rarityDelimiter,
   dnaDelimiter,
   debugLogs,
-  extraMetadata,
   namePrefix,
   network,
   solanaMetadata,
@@ -174,7 +173,7 @@ const writeMetaData = (_data) => {
 }
 
 const saveMetaDataSingleFile = (edition) => {
-  console.log("saveMetaDataSingleFile for edition: ", edition)
+  console.log("saveMetaDataSingleFile")
   let metadata = metadataList.find((meta) => meta.edition == edition)
   debugLogs
     ? console.log(
@@ -196,7 +195,6 @@ const addMetadata = (_dna, _edition, ipfsUrl) => {
     dna: sha1(_dna),
     edition: _edition,
     date: dateTime,
-    ...extraMetadata,
     attributes: attributesList,
     compiler: "DeezNutz NFT Engine",
   }
@@ -212,7 +210,6 @@ const addMetadata = (_dna, _edition, ipfsUrl) => {
       //Added metadata for solana
       external_url: solanaMetadata.external_url,
       edition: _edition,
-      ...extraMetadata,
       attributes: tempMetadata.attributes,
       properties: {
         files: [

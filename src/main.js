@@ -91,7 +91,7 @@ const saveImage = (_editionCount) => {
 
 // Upoad to IPFS
 const uploadImage = async (image) => {
-  console.log("Uploading...")
+  console.log("Uploading to IPFS...")
   try {
     const added = await client.add(
       image,
@@ -194,7 +194,11 @@ const startCreating = async () => {
           if (background.generate) {
             drawBackground()
           }
+
+          console.log('----------------------------------------')
+          console.log("Start creation of NFT", editionCount);
           console.log(`Drawing layers`)
+
           renderObjectArray.forEach((renderObject, index) => {
             drawElement(
               renderObject,
@@ -221,7 +225,6 @@ const startCreating = async () => {
         await writeMetaData(JSON.stringify(metadataList, null, 2))
 
         console.log(`Created edition: ${index}, with DNA: ${sha1(newDna)}`)
-        console.log('----------------------------------------')
 
         dnaList.add(filterDNAOptions(newDna))
         editionCount++

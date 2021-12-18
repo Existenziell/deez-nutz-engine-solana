@@ -8,6 +8,8 @@ const network = NETWORK.eth
 const namePrefix = "DeezNutz NFTs"
 const description = "Algorithmically generated NFT ball sacks"
 const baseUri = "https://ipfs.infura.io/ipfs/"
+
+// Addiontional metadata for Solana
 const solanaMetadata = {
   symbol: "DNN",
   seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
@@ -23,7 +25,7 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 4,
+    growEditionSizeTo: 10,
     layersOrder: [
       { name: "Background" },
       { name: "Balls" },
@@ -78,7 +80,6 @@ const background = {
   default: "#000000",
 }
 
-const extraMetadata = {}
 const rarityDelimiter = "#"
 const uniqueDnaTorrance = 10000
 
@@ -112,7 +113,6 @@ module.exports = {
   preview,
   shuffleLayerConfigurations,
   debugLogs,
-  extraMetadata,
   pixelFormat,
   text,
   namePrefix,

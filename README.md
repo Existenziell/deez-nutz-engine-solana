@@ -175,20 +175,6 @@ The program will output all the images in the `build/images` directory along wit
 }
 ```
 
-You can also add extra metadata to each metadata file by adding your extra items, (key: value) pairs to the `extraMetadata` object variable in the `config.js` file.
-
-```js
-const extraMetadata = {
-  creator: "Daniel Eugene Botha",
-};
-```
-
-If you don't need extra metadata, simply leave the object empty. It is empty by default.
-
-```js
-const extraMetadata = {};
-```
-
 That's it, you're done.
 
 ## Utils
